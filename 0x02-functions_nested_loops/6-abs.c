@@ -1,24 +1,20 @@
 #include "main.h"
-	#include <stdio.h>
 
+/**
+ *_abs-prints the absolute value of an integer.
+ *@a:the integer to compute its absolute value.
+ *Return:returns the abs value.
+ *
+ */
+int _abs(int a)
+{
+	int k = a;
+	int absvalue;
 
-	/**
-	 * main - check the code
-	 *
-	 * Return: Always 0.
-	 */
-	int main(void)
+	if (k < 0)
 	{
-	    int r;
-
-
-	    r = _abs(-1);
-	    printf("%d\n", r);
-	    r = _abs(0);
-	    printf("%d\n", r);
-	    r = _abs(1);
-	    printf("%d\n", r);
-	    r = _abs(-98);
-	    printf("%d\n", r);
-	    return (0);
+		k = k * (-1);
 	}
+	absvalue = k;
+	return (absvalue);
+}
