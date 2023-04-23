@@ -10,9 +10,9 @@
  */
 void simple_print_buffer(char *buffer, unsigned int size)
 {
-	unsigned int i;
+        unsigned int i;
 
-	i = 0;
+        i = 0;
         while (i < size)
         {
                 if (i % 10)
@@ -41,6 +41,6 @@ int main(void)
     simple_print_buffer(buffer, 98);
     _memset(buffer, 0x01, 95);
     printf("-------------------------------------------------\n");
-    simple_print_buffer(buffer, 98);
+    simple_print_buffer(buffer, 98);    
     return (0);
 }
