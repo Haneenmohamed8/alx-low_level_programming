@@ -10,14 +10,11 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int z = 0 , x = 0 ;
-	int y;
+	int z = 0, x, y;
 
-	while (s[x] != '\0')
+	for (x = 0; s[x] != '\0'; x++)
 	{
-		x++;
-		
-		if (s[x] != 32)
+		if (s[x] == 32)
 		{
 			for (y = 0; accept[y] != '\0'; y++)
 			{
@@ -29,5 +26,5 @@ unsigned int _strspn(char *s, char *accept)
 			return (z);
 	}
 		return (z);
-	
+
 }
