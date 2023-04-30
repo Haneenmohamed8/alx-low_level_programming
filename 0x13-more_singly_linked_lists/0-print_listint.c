@@ -1,28 +1,22 @@
-#ifndef LIST_H
-#define LIST_H
-
-#include <stdlib.h>
-#include <stdarg.h>
+#include "lists.h"
 
 /**
- * struct list - singly link list
- * * @str: char arraya
- * @len: length
- * @next: pointer
+ * print_listint - prints all the elements of a listint_t list.
+ * @h: pointer to the head of the list
+ *
+ * Return: the number of nodes
  */
-
-typedef struct list
+ 
+size_t print_listint(const listint_t *h)
 {
-	char *str;
-	unsigned int len;
-	struct list *next;
-} list_t;
+    size_t nodes = 0;
 
-size_t print_list(const list_t *h);
-size_t list_len(const list_t *h);
-list_t *add_node(list_t **head, const char *str);
-list_t *add_node_end(list_t **head, const char *str);
-list_t  *addNode(list_t **head_ref, const char *new_data);
-void free_list(list_t *head);
+    while (h != NULL)
+    {
+        printf("%d\n", h->n);
+        h = h->next;
+        nodes++;
+    }
 
-#endif 
+    return (nodes);
+}
