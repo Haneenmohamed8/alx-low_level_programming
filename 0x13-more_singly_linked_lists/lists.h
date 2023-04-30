@@ -2,7 +2,9 @@
 #define LIST_H
 
 #include <stdlib.h>
-#include <stdarg.h>
+#include <string.h>
+#include <stdio.h>
+
 
 /**
  * struct list - singly link list
