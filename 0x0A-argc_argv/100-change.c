@@ -8,6 +8,7 @@
  *
  * Return: 0 if successful, 1 otherwise
  */
+
 int main(int argc, char *argv[])
 {
     int cents, coins = 0;
