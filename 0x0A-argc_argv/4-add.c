@@ -2,16 +2,16 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point
- * @argc: Number of arguments
- * @argv: Array of arguments
+ * main - entry point of the program
+ * @argc: the number of arguments passed to the program
+ * @argv: an array of strings containing the arguments passed to the program
  *
- * Return: 0 if success, 1 if error
+ * Return: 0 if successful, 1 if an error occurred
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int cents, coins = 0;
+	int cents, coins;
 
 	if (argc != 2)
 	{
@@ -27,22 +27,39 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
-	while (cents > 0)
-	{
-		if (cents >= 25)
-			cents -= 25;
-		else if (cents >= 10)
-			cents -= 10;
-		else if (cents >= 5)
-			cents -= 5;
-		else if (cents >= 2)
-			cents -= 2;
-		else
-			cents -= 1;
+	coins = 0;
 
+	while (cents >= 25)
+	{
+		cents -= 25;
+		coins++;
+	}
+
+	while (cents >= 10)
+	{
+		cents -= 10;
+		coins++;
+	}
+
+	while (cents >= 5)
+	{
+		cents -= 5;
+		coins++;
+	}
+
+	while (cents >= 2)
+	{
+		cents -= 2;
+		coins++;
+	}
+
+	while (cents >= 1)
+	{
+		cents -= 1;
 		coins++;
 	}
 
 	printf("%d\n", coins);
+
 	return (0);
 }
