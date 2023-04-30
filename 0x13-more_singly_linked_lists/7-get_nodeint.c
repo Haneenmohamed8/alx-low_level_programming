@@ -6,18 +6,19 @@
  * @index: The index of the node to return, starting at 0.
  *
  * Return: If the node exists - a pointer to the nth node.
- *         If the node does not exist - NULL.
+ *If the node does not exist - NULL.
  */
+
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-    unsigned int i = 0;
-    listint_t *current = head;
+	unsigned int i = 0;
+	listint_t *current = head;
 
-    while (current != NULL && i < index)
-    {
-        current = current->next;
-        i++;
-    }
+	while (current != NULL && i < index)
+	{
+		current = current->next;
+		i++;
+	}
 
-    return (current == NULL || i < index) ? NULL : current;
+	return (current == NULL || i < index) ? NULL : current;
 }
