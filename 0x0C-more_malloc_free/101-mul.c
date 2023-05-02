@@ -55,7 +55,9 @@ void multiply(char *num1, char *num2, int len1, int len2)
 {
 	int i, j, len, *result;
 	len = len1 + len2;
+
 	result = calloc(len, sizeof(int));
+
 	if (result == NULL)
 	{
 		printf("Error\n");
