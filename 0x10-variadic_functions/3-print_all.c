@@ -11,12 +11,12 @@ void print_all(const char * const format, ...)
 	va_list args;
 	int i = 0, j = 0;
 	char *str;
+
 	va_start(args, format);
 
 	while (format && format[i])
 	{
 		j = 0;
-
 		switch (format[i])
 		{
 			case 'c':
