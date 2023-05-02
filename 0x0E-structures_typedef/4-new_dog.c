@@ -1,53 +1,56 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
 
 /**
  * new_dog - creates a new dog
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
  *
- * Return: a pointer to the new dog, or NULL on failure
+ * Return: pointer to new dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-    dog_t *new_dog;
-    char *name_copy, *owner_copy;
-    int name_len, owner_len;
+	unsigned int name_len, owner_len, i;
+	dog_t *new_dog;
 
-    /* Calculate length of name and owner strings */
-    for (name_len = 0; name[name_len]; name_len++)
-        ;
-    for (owner_len = 0; owner[owner_len]; owner_len++)
-        ;
+	if (name == NULL || owner == NULL)
+		return (NULL);
 
-    /* Allocate memory for new dog and copied strings */
-    new_dog = malloc(sizeof(dog_t));
-    if (new_dog == NULL)
-        return (NULL);
-    name_copy = malloc(sizeof(char) * (name_len + 1));
-    if (name_copy == NULL) {
-        free(new_dog);
-        return (NULL);
-    }
-    owner_copy = malloc(sizeof(char) * (owner_len + 1));
-    if (owner_copy == NULL) {
-        free(new_dog);
-        free(name_copy);
-        return (NULL);
-    }
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
+		return (NULL);
 
-    /* Copy name and owner strings */
-    for (int i = 0; i <= name_len; i++)
-        name_copy[i] = name[i];
-    for (int i = 0; i <= owner_len; i++)
-        owner_copy[i] = owner[i];
+	for (name_len = 0; name[name_len]; name_len++)
+		;
+	name_len++;
 
-    /* Initialize new dog */
-    new_dog->name = name_copy;
-    new_dog->age = age;
-    new_dog->owner = owner_copy;
+	new_dog->name = malloc(name_len * sizeof(char));
+	if (new_dog->name == NULL)
+	{
+		free(new_dog);
+		return (NULL);
+	}
 
-    return (new_dog);
+	for (i = 0; i < name_len; i++)
+		new_dog->name[i] = name[i];
+
+	new_dog->age = age;
+
+	for (owner_len = 0; owner[owner_len]; owner_len++)
+		;
+	owner_len++;
+
+	new_dog->owner = malloc(owner_len * sizeof(char));
+	if (new_dog->owner == NULL)
+	{
+		free(new_dog->name);
+		free(new_dog);
+		return (NULL);
+	}
+
+	for (i = 0; i < owner_len; i++)
+		new_dog->owner[i] = owner[i];
+
+	return (new_dog);
 }
