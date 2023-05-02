@@ -9,9 +9,10 @@
  *
  * Return: Always 0.
  */
+
 int main(int argc, char *argv[])
 {
-    int i, j, len1, len2, len;
+	int i, j, len1, len2, len;
     int *result;
     char *num1, *num2;
 
@@ -73,5 +74,5 @@ int main(int argc, char *argv[])
     printf("\n");
     free(result);
 
-    return (0);
+	return (0);
 }
