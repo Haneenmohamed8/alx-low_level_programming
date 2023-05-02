@@ -42,7 +42,6 @@ void print_all(const char * const format, ...)
 				j = 1;
 				break;
 		}
-
 		if (format[i + 1] && !j)
 			printf(", ");
 
