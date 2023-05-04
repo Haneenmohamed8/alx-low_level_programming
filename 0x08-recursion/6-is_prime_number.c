@@ -12,7 +12,7 @@ int is_prime_number(int n)
 	if (n < 2)
 		return (0);
 
-	return (check_prime(n, 2));
+	return (check(n, 2));
 }
 
 /**
@@ -30,5 +30,5 @@ int check(int n, int div)
 	if (n % div == 0)
 		return (0);
 
-	return (check_prime(n, div + 1));
+	return (check(n, div + 1));
 }
