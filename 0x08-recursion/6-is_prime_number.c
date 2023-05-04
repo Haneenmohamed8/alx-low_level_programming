@@ -3,7 +3,7 @@
 
 
 /**
- * check_prime - checks if a number is prime recursively
+ * check - checks if a number is prime recursively
  * @n: the number to check
  * @div: the divisor to check n against
  *
