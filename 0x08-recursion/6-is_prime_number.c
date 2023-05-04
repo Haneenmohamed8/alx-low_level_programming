@@ -22,7 +22,7 @@ int is_prime_number(int n)
  *
  * Return: 1 if n is prime, 0 otherwise
  */
-int check_prime(int n, int div)
+int check(int n, int div)
 {
 	if (n == div)
 		return (1);
