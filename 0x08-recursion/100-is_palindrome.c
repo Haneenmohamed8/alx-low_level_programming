@@ -3,25 +3,6 @@
 
 
 /**
- * is_palindrome - checks if a string is a palindrome
- *
- * @s: the string to check
- *
- * Return: 1 if @s is a palindrome, 0 otherwise
- */
-int is_palindrome(char *s)
-{
-	int len = 0;
-
-    /* Get the length of the string */
-	while (s[len])
-		len++;
-
-    /* Call the recursive function to check if it's a palindrome */
-	return is_palindrome_helper(s, 0, len - 1);
-}
-
-/**
  * is_palindrome_helper - recursive helper function to check if a string is a palindrome
  *
  * @s: the string to check
@@ -42,4 +23,24 @@ int is_palindrome_helper(char *s, int start, int end)
 
     /* Recursively check the rest of the string */
 	return is_palindrome_helper(s, start + 1, end - 1);
+}
+
+
+/**
+ * is_palindrome - checks if a string is a palindrome
+ *
+ * @s: the string to check
+ *
+ * Return: 1 if @s is a palindrome, 0 otherwise
+ */
+int is_palindrome(char *s)
+{
+	int len = 0;
+
+    /* Get the length of the string */
+	while (s[len])
+		len++;
+
+    /* Call the recursive function to check if it's a palindrome */
+	return is_palindrome_helper(s, 0, len - 1);
 }
